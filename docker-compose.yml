@@ -1,0 +1,20 @@
+#Docker compose file for MYSQL
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'mydb'
+      MYSQL_USER: 'ashwani'
+      MYSQL_PASSWORD: 'ashwanikum12'
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+    - my-db:/var/lib/mysql
+volumes:
+  my-db:
